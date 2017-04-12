@@ -33,6 +33,13 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+        //assertTrue( true );
+    	
+    	assertEquals(max(4,5),5);
+    	assertEquals(max(5,4),5);
+    }
+    
+    public static int max(int a, int b){
+    	return a>b ? a:b;
     }
 }
