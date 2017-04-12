@@ -14,6 +14,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+  	  <groupId>com.opencsv</groupId>
+  	  <artifactId>opencsv</artifactId>
+  	  <version>3.9</version>
+	</dependency>
   </dependencies>
   <build>
 		<finalName>marelease</finalName>
@@ -58,7 +63,30 @@
 				  </archive>
 				</configuration>
 			</plugin>
-
+			<!-- Dependencies OpenCSv -->
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRefs>jar-with-dependencies</descriptorRefs>
+					</descriptorRefs>
+					<archive>
+						<manifest> 
+							<mainClass>jf.App</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
